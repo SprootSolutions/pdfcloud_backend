@@ -25,7 +25,7 @@ import java.io.IOException;
 @RequestMapping("/api/v1/pdf")
 public class PDFController {
 
-
+//    TODO: delete user
     @GetMapping("/user")
     public ResponseEntity<User> getUser(@RequestParam int id) {
         User user = new User(id, "Mikhail", "Melnik");
