@@ -8,7 +8,8 @@ import com.pdf.restapi.service.merge.MergePDFImpl;
 import com.pdf.restapi.service.rotate.RotatorPDF;
 import com.pdf.restapi.service.split.SplitterPDF;
 import com.pdf.restapi.service.split.SplitterPDFImpl;
-import com.pdf.restapi.service.сonverters.ConverterPDFtoJPEG;
+import com.pdf.restapi.service.converters.ConverterPDFtoJPEG;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -27,8 +28,13 @@ public class PDFController {
 
 
     @GetMapping("/user")
-    public ResponseEntity<User> getUser(@RequestParam int id) {
-        User user = new User(id, "Mikhail", "Melnik");
+    @Operation(summary = "Test Endpoint", description = "This endpoint is for testing purposes.")
+    public ResponseEntity<User> getUser(
+            @RequestParam int id,
+            @RequestParam String firstName,
+            @RequestParam String lastName
+    ) {
+        User user = new User(id, firstName + " test", lastName+" test");
         return ResponseEntity.ok(user);
     }
 

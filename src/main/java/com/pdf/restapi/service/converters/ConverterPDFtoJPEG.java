@@ -1,4 +1,4 @@
-package com.pdf.restapi.service.сonverters;
+package com.pdf.restapi.service.converters;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.rendering.PDFRenderer;
 import org.springframework.web.multipart.MultipartFile;
